@@ -41,7 +41,7 @@ public class BankAccount {
 
     public double withdraw(double amount) throws InsufficientFundsException {
         if (balance < amount) {
-            throw new InsufficientFundsException("Insufficient Funds. Please Check Your Balance and Try Again.");
+            throw new InsufficientFundsException();
         }
         balance -= amount;
         System.out.println("Withdraw Amount: " + amount);
@@ -54,7 +54,7 @@ public class BankAccount {
         bank.setBalance(1000);
 
         bank.deposit(1200);
-//        bank.withdraw(5000);
+        bank.withdraw(5000);
 
         System.out.println(bank);
     }
